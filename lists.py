@@ -4,6 +4,9 @@ you run this file.
 """
 
 
+from unicodedata import numeric
+
+
 def print_list(items):
     """Print each item in the input list.
     
@@ -16,12 +19,13 @@ def print_list(items):
         3
         9
     """
-
-    print("the wrong thing")
+    
+    for item in items:
+        print(item)
 
 
 def long_words(words):
-    """Return words in input list that longer than 4 characters.
+    """Return words in input list that are longer than 4 characters.
     
     For example::
     
@@ -36,8 +40,12 @@ def long_words(words):
         >>> long_words(["all", "are", "tiny"])
         []
     """
-
-    return ['the wrong thing']
+    long_word_list = []
+    for word in words:
+        if len(word) > 4:
+            long_word_list.append(word)
+    return long_word_list    
+    
 
 
 def n_long_words(words, n):
@@ -53,8 +61,13 @@ def n_long_words(words, n):
         >>> n_long_words(["I", "like", "apples", "bananas", "you"], 5)
         ['apples', 'bananas']
     """
+    longer_than_n = []
+    for word in words:
+        if len(word) > n: 
+            longer_than_n.append(word)
+    return longer_than_n
 
-    return ['the wrong thing']
+    
 
 
 def smallest_int(numbers):
@@ -74,7 +87,12 @@ def smallest_int(numbers):
         True
     """
 
-    return 100
+
+
+    
+        
+
+
 
 
 def largest_int(numbers):
@@ -93,8 +111,12 @@ def largest_int(numbers):
         >>> largest_int([]) is None
         True
     """
+    largest = 0
+    for num in numbers:
+        if num > largest:
+            largest = num
+    return largest 
 
-    return 0
 
 
 def halvesies(numbers):
@@ -111,8 +133,11 @@ def halvesies(numbers):
         >>> halvesies([1, 5])
         [0.5, 2.5]
     """
+    divide_by_two = [num / 2 for num in numbers]
+    
 
-    return []
+
+    return divide_by_two
 
 
 def word_lengths(words):
@@ -123,8 +148,10 @@ def word_lengths(words):
         >>> word_lengths(["hello", "hey", "hello", "spam"])
         [5, 3, 5, 4]
     """
-
-    return []
+    length_of_words = []
+    for word in words:
+        length_of_words.append(len(word))
+    return length_of_words
 
 
 def sum_numbers(numbers):
@@ -142,8 +169,12 @@ def sum_numbers(numbers):
         >>> sum_numbers([])
         0
     """
+    sum = 0
+    for num in numbers:
+        sum = sum + num
+    return sum 
 
-    return None
+    
 
 
 def mult_numbers(numbers):
@@ -166,7 +197,7 @@ def mult_numbers(numbers):
         1
     """
 
-    return None
+    
 
 
 def join_strings(words):
@@ -184,8 +215,11 @@ def join_strings(words):
         >>> join_strings([])
         ''
     """
+    # new_string = ''
+    # for word in words:
+    #     new_string += word
+    # return new_string
 
-    return "Not the right thing"
 
 
 def average(numbers):
@@ -207,7 +241,12 @@ def average(numbers):
     a feel free to provide a good solution here.)
     """
 
-    return 0
+    sum = 0
+    length = len(numbers)
+    for num in numbers:
+        sum = sum + num
+    return sum / length
+
 
 
 def join_strings_with_comma(words):
@@ -226,8 +265,17 @@ def join_strings_with_comma(words):
         >>> join_strings_with_comma(["Pretzel"])
         'Pretzel'
     """
+    #take in a list of words
+    #return a string of all words seperated by commas
+    #define a variable for this new string that'll be returned
+    #loop through all the words in the list adding them to the string
+    #add a comma and space each iteration ', '
 
-    return ""
+   
+
+
+    
+   
 
 
 def reverse_list(items):
@@ -250,8 +298,24 @@ def reverse_list(items):
         >>> orig
         ['apple', 'berry', 'cherry']
     """
+    
+    #define new list
+    #loop through values in original list
+    #for item in items:
+    #append items[-1] to new list
+    #    new_list = []
+    #    new_list.append(items[-1])
 
-    return []
+    
+
+
+
+
+
+
+
+    return new_list
+
 
 
 def reverse_list_in_place(items):
